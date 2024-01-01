@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Creating Slides For in28minutes</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/white.css" id="theme">
+	<link rel="stylesheet" href="css/reveal-override.css" />
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+
+
+			<!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
+			<section data-markdown data-separator="---">
+
+				<script type="text/template">
+
+<!-- .slide: class="center" -->
+# Happy To Have
+# You In Our Team
+
+Next slide (press right arrow)
+
+---
+				## Our Goals
+				<!-- .slide: class="image-right image-forty one30" -->
+				![](./images/about-min.png)
+				- We Are Really Happy That You Are Interested!
+				- **Our Goals**:
+				- **Highest Quality Content**: Deliver highest quality learning solutions in areas of cloud, devops and
+				programming that simplify learning
+				- **Best Support**: Keep the courses up to date and provide the best possible support in Q&A and Discord
+
+				---
+				## What Should You Do?
+				<!-- .slide: class="image-right image-forty one10" -->
+				![](./images/about-min.png)
+
+				- **What Should You Do?**: TWO tasks!
+				- **1**: Be Active in Our Discord Community
+				- **Join Here** - http://links.in28minutes.com/community-sb
+				- Help out other learners for the next 2 weeks
+				- **2**: Create a presentation
+				- **Choose One Topic From**: Git, Kafka, Docker, Kubernetes, Terraform, Design Patterns, Functional
+				Programming OR Microservices
+				- **Using this template**: You can edit this template in a Text Editor to change content
+				- **Go to next slide**: Next slides help you to design a presentation in this template
+				- **Deadline**: 14 Jan, 2024
+				- Send Updated Zip to ranga@in28minutes.com
+
+				---
+				## Editing The Slides!
+				<!-- .slide: class="image-right image-fifty one10" -->
+				![](./images/remember.png)
+				- Open `00-presentation.html` in your favorite text editor!
+				- Goto **Line 83** in text editor
+				- **Make a change** in the text
+				- Refresh the presentation **in your browser**!
+				- **Congratulations!**
+				- Time to move on to Next Slide
+
+
+				---
+				<!-- .slide: class="one20" -->
+
+				## Slide Example One: Image on Top
+				![](images/02-architecture/private-network-1-SingleDataCenter.png)
+				- This is Line 1 of Explanation
+				- This is Line 2 of Explanation
+				- **Point 1**: This is Line 1 of Explanation
+				- **Point 2**: This is Line 2 of Explanation
+
+				---
+				## Slide Example One: Image on Right
+
+				<!-- .slide: class="image-right image-twenty one50" -->
+				![](images/02-architecture/private-network-1-SingleDataCenter.png)
+				- This is Line 1 of Explanation
+				- This is Line 2 of Explanation
+				- **Point 1**: This is Line 1 of Explanation
+				- **Point 2**: This is Line 2 of Explanation
+				- This is Line 3 of Explanation
+				- **Point 1**: This is Line 1 of Explanation
+				- **Point 2**: This is Line 2 of Explanation
+
+				---
+				## Slide with a Table
+
+				|Feature|HDD(Hard Disk Drive)|SSD(Solid State Drive)|
+				|--|:--|:--|
+				|Performance - IOPS| Low | High|
+				|Throughput| High | High|
+				|Great at| Large sequential I/O operations |Small, Random I/O operations &<BR /> Sequential I/O|
+				|Recommended for| Large streaming or big data workloads| Transactional workloads|
+				|Cost| Low| Expensive|
+				|Boot Volumes|Not Recommended| Recommended|
+
+
+				---
+				## Styling Tips For Creating Beautiful Slides
+
+				<!-- .slide: class="ninety image-right image-fifty" -->
+				![](./images/forgettting-curve.png)
+
+				- Goto Line 159 in your text editor
+				- You should see this: `<!-- .slide: class="ninety image-right image-fifty" -->`
+				- Make a change to any of the classes
+				- Refresh and see the change in action
+				- **1**: Change font size of entire slide
+				- Use one of these instead of `ninety` - `seventy, eighty, eightyfive, ninety, one10, one20, one30,
+				one40, one50`
+				- **2**: Decide space for right side image
+				- `image-twenty, image-thirty, image-forty, image-fifty, image-sixty, image-seventy`
+				---
+				<!-- .slide: class="center" -->
+				# Thank You!
+
+				---
+
+
+				</script>
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+
+	<script>
+
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions
+			width: 1200,
+			height: 700,
+
+			// Factor of the display size that should remain empty around the content
+			margin: 0.04,
+
+			// Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 2.0,
+
+			controls: false,
+			progress: false,
+			history: true,
+			center: false,
+			slideNumber: true,
+			fragments: false,
+			transition: 'none', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+
+
+	</script>
+
+</body>
+
+</html>

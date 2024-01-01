@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Creating Slides For in28minutes</title>
+	<title>Design Patterns</title>
 
 	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 	<meta name="author" content="Hakim El Hattab">
@@ -49,13 +49,13 @@
 				<script type="text/template">
 
 <!-- .slide: class="center" -->
-# Happy To Have
-# You In Our Team
+# Design Patterns
 
-Next slide (press right arrow)
+Reusable solutions to common problems in software design.
+
 
 ---
-				## Our Goals
+				## What are Design Patterns
 				<!-- .slide: class="image-right image-forty one30" -->
 				![](./images/about-min.png)
 				- We Are Really Happy That You Are Interested!
@@ -146,9 +146,218 @@ Next slide (press right arrow)
 				- `image-twenty, image-thirty, image-forty, image-fifty, image-sixty, image-seventy`
 				---
 				<!-- .slide: class="center" -->
-				# Thank You!
+				# What are Design Patterns
+
+				- Design patterns are well-tested solutions to common problems in software development.
+				- Design patterns are not specific solutions for specific kinds of software, rather, design patterns are
+				general solutions for common problems that crop up in all kinds of software systems.
+				- Design patterns were originally invented by four software designers, Erich Gamma, Richard Helm, Ralph
+				Johnson, and John Vlissides, affectionately known in the software world as the gang of four.
+				- They created 23 design patterns, and started a whole new way of thinking about software.
+				- We will begin with 7 patterns.
 
 				---
+				<!-- .slide: class="center" -->
+				# “I have a problem. When one of the object changes, I need to let all other objects know.”
+				Is there a good way to that ?
+
+				- This is a Common Problem.
+				- There is a proven method to solve it **“The Observer Pattern”**.
+
+				---
+				<!-- .slide: class="center" -->
+				# How to Use Design Pattern
+
+				- Deign Pattern is not a library, module or package.
+				- This are guidelines for how to solve problem.
+				- Higher level than library.
+				- First understand the Pattern, then use its design in your software.
+
+				---
+				<!-- .slide: class="center" -->
+				# Shared Vocabulary
+
+				- “First, register your objects with mine. Then implement and update method, then when its get called,
+				call my getValue”.
+				- Just use the “Observer Pattern”.
+				- Effective to communicate design.
+
+				---
+				<!-- .slide: class="center" -->
+				# Using (or Reusing) Design Patterns
+
+				- Ultimate in reuse.
+				- Built from years of software development experience.
+				- Saves time and trial and error.
+				- Not reusing code, reusing experiences.
+
+				---
+				# SOLID
+				<!-- .slide: class="center" -->
+
+				- **SOLID** is an acronym for the first 5 principles of object-oriented design:
+				- **S**RP The Single
+				Responsibility Principle: -- a class should have one, and only one, reason to change.
+				- **O**CP The Open Closed Principle: -- you should be able to extend a class's behavior, without
+				modifying
+				it.
+				- **L**SP The Liskov Substitution Principle: -- derived classes must be substitutable for their base
+				classes.
+				- **I**SP The Interface Segregation Principle: -- make fine grained interfaces that are client specific.
+				- **D**IP The Dependency Inversion Principle -- depend on abstractions not on concrete implementations.
+
+				---
+				# Design Principle 1: Single Responsibility Principle
+				<!-- .slide: class="center" -->
+
+				- **A class should have only one reason to change.**
+				- In this context a responsibility is considered to be one reason to change.
+				- This principle states that if we have 2 reasons to change for a class, we have to split the
+				functionality in two classes.
+				- Each class will handle only one responsibility and on future if we need to make one change we are
+				going to make it in the class which handle it.
+				- When we need to make a change in a class having more responsibilities the change might affect the
+				other functionality of the classes.
+
+				---
+				# Design Principle 2: The Open/Closed Principle
+				<!-- .slide: class="center" -->
+
+				- **Classes should be open for extension but closed for modification.**
+				- Once you’ve written a class, it’s done. Never add anything to it after that.
+				- No modification: No new member variables, no new method, no new interfaces implemented.
+				- New applications via extension: But! Other code should be able to use your class in new ways.
+
+				- Following are three mechanisms via which a class can be open for extensions:
+				- **Inheritance, delegation and composition.**
+
+
+				---
+				# Inheritance
+				<!-- .slide: class="center" -->
+
+				- If you structure your code into abstract base classes, other can find new ways to use it via
+				Inheritance.
+				- **E.g. Template Pattern**
+
+				---
+				# Delegation
+				<!-- .slide: class="center" -->
+
+				- If you fire events and expose properties, other code can listen in, and use your code via delegation.
+
+				- **E.g. Observer, MVC, Chain of Responsibility.**
+
+				---
+				# Composition
+
+				<!-- .slide: class="center" -->
+				- If you take in member variables to determine behaviour, you allow extension via composition.
+
+				- **E.g. strategy pattern and dependency injection.**
+
+				---
+				# Design Principle 3 : Liskov's Substitution Principle
+
+				<!-- .slide: class="center" -->
+				- Derived types must be completely substitutable for their base types.
+				- This principle is just an extension of the Open Close Principle in terms of behaviour meaning that we
+				must make sure that new derived classes are extending the base classes without changing their behaviour.
+				- The new derived classes should be able to replace the base classes without any change in the code.
+
+				---
+				# Design Principle 4: Interface Segregation Principle
+
+				<!-- .slide: class="center" -->
+				- Clients should not be forced to depend upon interfaces that they don't use.
+				- This principle teaches us to take care how we write our interfaces.
+				- When we write our interfaces we should take care to add only methods that should be there.
+				- If we add methods that should not be there the classes implementing the interface will have to
+				implement those methods as well.
+				- For example if we create an interface called Worker and add a method lunch break, all the workers will
+				have to implement it. What if the worker is a robot?
+
+				---
+				# Design Principle 5: Dependency Inversion and the Hollywood Principle
+
+				<!-- .slide: class="center" -->
+				- **Depend on abstractions, never on details. - The Dependency Inversion Principle**
+
+				- Lets’ say you are designing a word processor. Say you have classes for document and page.
+
+				- To follow the Dependency inversion principle, you’d do two things.
+
+				- Document and Page would both be interfaces implemented by some concrete classes.
+
+				- No implementation of either Document or Page interfaces should reference any other implementation.
+
+				---
+				# Design Principle 5: Dependency Inversion and the Hollywood Principle
+
+				<!-- .slide: class="center" -->
+				- **Where’s the inversion?**
+
+				- It’s because the high-level component and the low-level component now both depend on the abstractions.
+
+				- Document = Interface, Page = Interface
+
+				- DocumentImpl = implementation, PageImpl = implementation
+
+				- Document and DocumentImpl should both depend on Page – never on PageImpl
+				- Page and PageImpl should both depend on Document – never on DocumentImpl
+
+				- If we draw the UML diagram for this class hierarchy we will end with arrows pointed in inverted
+				direction which will end up in this principle Dependency Inversion.
+
+				---
+				# Design Principle 5: Dependency Inversion and the Hollywood Principle
+
+				<!-- .slide: class="center" -->
+
+				- **Don’t Call us, we’ll call you – The Hollywood Principle**
+
+				- High level modules will call the Low level modules.
+
+				- Let’s say you are designing a word processor. Say you have interfaces for Document and Page.
+				- The Page wants to know when the Document is changed in some way.
+				- In order to get this information the Page should not called the document.
+
+				- Instead the Document notifies the Page of changes when they occur – via events or messages.
+
+				- The idea of high-level components calling low-level components is ubiquitous in frameworks.
+
+				---
+				# Design Principle 5: Dependency Inversion and the Hollywood Principle
+
+				<!-- .slide: class="center" -->
+
+				- **Don’t Call us, we’ll call you – The Hollywood Principle**
+
+				- High level modules will call the Low level modules.
+
+				- Let’s say you are designing a word processor. Say you have interfaces for Document and Page.
+				- The Page wants to know when the Document is changed in some way.
+				- In order to get this information the Page should not called the document.
+
+				- Instead the Document notifies the Page of changes when they occur – via events or messages.
+
+				- The idea of high-level components calling low-level components is ubiquitous in frameworks.
+
+				---
+				<!-- .slide: class="center" -->
+				# Strategy Pattern
+
+
+				---
+				# Design Principle 1 - Encapsulating the code that Varies
+
+				<!-- .slide: class="center" -->
+
+				- Identify the aspects of your code that vary and separate them from what stays the same.
+
+				- All patterns let some part of the code vary independently of the other parts.
+
+				- Fewer surprises from code changes and increased flexibility in your code.
 
 
 				</script>

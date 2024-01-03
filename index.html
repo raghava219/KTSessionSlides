@@ -347,6 +347,57 @@ Reusable solutions to common problems in software design.
 				<!-- .slide: class="center" -->
 				# Strategy Pattern
 
+				Inheritance and Interfaces
+
+				---
+				# Inheritance
+
+				- Inheritance is a core principle of OO Programming.
+				- But we tend to overuse it.
+				- Often results in design and code that is inflexible.
+				- Let’s look at example of “Duck simulator”.
+
+				---
+				# Duplicate Code
+
+				<!-- .slide: class="center" -->
+
+				- All Subclasses need to override super class methods to avoid default behaviour.
+
+				![](./images/03-StrategyDesignPattern/DuplicateCode.png)
+
+
+				---
+				# Problems with our Design
+
+				- We have code duplicated across classes.
+				- Hard to gain knowledge of all the ducks.
+				- Changes can affect other ducks.
+				- Runtime behavior changes are difficult.
+
+				---
+				# What about using Interfaces ?
+
+				- Allow different classes to share similarities.
+				- Not all classes need to have same behavior.
+				- Let us try moving duck behaviors into interfaces.
+
+				---
+				# Interfaces implementation
+
+				- Still the duplicate code is not resolved.
+
+				![](./images/03-StrategyDesignPattern/InterfaceSolution.png)
+
+				---
+				# Interface implementation is also Problematic
+
+				- Solves part of the Problem, but…
+				- Absolutely destroys code reuse
+				- Becomes a maintenance nightmare
+				- Does not allow for runtime changes in behavior other than flying and quacking.
+				- Like, a rubber duck has to implement quackable to squeak. Which is a bit odd.
+
 
 				---
 				# Design Principle 1 - Encapsulating the code that Varies
@@ -358,6 +409,45 @@ Reusable solutions to common problems in software design.
 				- All patterns let some part of the code vary independently of the other parts.
 
 				- Fewer surprises from code changes and increased flexibility in your code.
+				---
+				# Programming to an Interface
+
+				<!-- .slide: class="center" -->
+
+				![](./images/03-StrategyDesignPattern/Identifying_What_Changes.png)
+
+				---
+				# Programming to an Interface
+
+				<!-- .slide: class="center" -->
+
+				![](./images/03-StrategyDesignPattern/Identifying_What_Changes2.png)
+
+				---
+				# Programming to an Interface
+
+				<!-- .slide: class="center" -->
+				![](./images/03-StrategyDesignPattern/Programing_To_Interface.png)
+
+				---
+				## Programming to an Interface
+
+				<!-- .slide: class="one20" -->
+				![](./images/03-StrategyDesignPattern/Programing_To_Interface2.png)
+
+				---
+				# Programming to an Interface
+
+				- Rather than relying on an implementation of behavior in our ducks
+				- We are relying on an interface FlyBehaviour and QuackBehaviour are now interfaces
+				- A class that implements a specific behavior
+				- This way we are no longer locked into specific implementation.
+				- And ducks do not need to know details of how they implement the behaviors.
+
+				---
+				<!-- .slide: class="center" -->
+				# Observer Pattern
+
 
 
 				</script>

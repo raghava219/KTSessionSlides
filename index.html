@@ -53,97 +53,6 @@
 
 Reusable solutions to common problems in software design.
 
-
----
-				## What are Design Patterns
-				<!-- .slide: class="image-right image-forty one30" -->
-				![](./images/about-min.png)
-				- We Are Really Happy That You Are Interested!
-				- **Our Goals**:
-				- **Highest Quality Content**: Deliver highest quality learning solutions in areas of cloud, devops and
-				programming that simplify learning
-				- **Best Support**: Keep the courses up to date and provide the best possible support in Q&A and Discord
-
-				---
-				## What Should You Do?
-				<!-- .slide: class="image-right image-forty one10" -->
-				![](./images/about-min.png)
-
-				- **What Should You Do?**: TWO tasks!
-				- **1**: Be Active in Our Discord Community
-				- **Join Here** - http://links.in28minutes.com/community-sb
-				- Help out other learners for the next 2 weeks
-				- **2**: Create a presentation
-				- **Choose One Topic From**: Git, Kafka, Docker, Kubernetes, Terraform, Design Patterns, Functional
-				Programming OR Microservices
-				- **Using this template**: You can edit this template in a Text Editor to change content
-				- **Go to next slide**: Next slides help you to design a presentation in this template
-				- **Deadline**: 14 Jan, 2024
-				- Send Updated Zip to ranga@in28minutes.com
-
-				---
-				## Editing The Slides!
-				<!-- .slide: class="image-right image-fifty one10" -->
-				![](./images/remember.png)
-				- Open `00-presentation.html` in your favorite text editor!
-				- Goto **Line 83** in text editor
-				- **Make a change** in the text
-				- Refresh the presentation **in your browser**!
-				- **Congratulations!**
-				- Time to move on to Next Slide
-
-
-				---
-				<!-- .slide: class="one20" -->
-
-				## Slide Example One: Image on Top
-				![](images/02-architecture/private-network-1-SingleDataCenter.png)
-				- This is Line 1 of Explanation
-				- This is Line 2 of Explanation
-				- **Point 1**: This is Line 1 of Explanation
-				- **Point 2**: This is Line 2 of Explanation
-
-				---
-				## Slide Example One: Image on Right
-
-				<!-- .slide: class="image-right image-twenty one50" -->
-				![](images/02-architecture/private-network-1-SingleDataCenter.png)
-				- This is Line 1 of Explanation
-				- This is Line 2 of Explanation
-				- **Point 1**: This is Line 1 of Explanation
-				- **Point 2**: This is Line 2 of Explanation
-				- This is Line 3 of Explanation
-				- **Point 1**: This is Line 1 of Explanation
-				- **Point 2**: This is Line 2 of Explanation
-
-				---
-				## Slide with a Table
-
-				|Feature|HDD(Hard Disk Drive)|SSD(Solid State Drive)|
-				|--|:--|:--|
-				|Performance - IOPS| Low | High|
-				|Throughput| High | High|
-				|Great at| Large sequential I/O operations |Small, Random I/O operations &<BR /> Sequential I/O|
-				|Recommended for| Large streaming or big data workloads| Transactional workloads|
-				|Cost| Low| Expensive|
-				|Boot Volumes|Not Recommended| Recommended|
-
-
-				---
-				## Styling Tips For Creating Beautiful Slides
-
-				<!-- .slide: class="ninety image-right image-fifty" -->
-				![](./images/forgettting-curve.png)
-
-				- Goto Line 159 in your text editor
-				- You should see this: `<!-- .slide: class="ninety image-right image-fifty" -->`
-				- Make a change to any of the classes
-				- Refresh and see the change in action
-				- **1**: Change font size of entire slide
-				- Use one of these instead of `ninety` - `seventy, eighty, eightyfive, ninety, one10, one20, one30,
-				one40, one50`
-				- **2**: Decide space for right side image
-				- `image-twenty, image-thirty, image-forty, image-fifty, image-sixty, image-seventy`
 				---
 				<!-- .slide: class="center" -->
 				# What are Design Patterns
@@ -224,9 +133,9 @@ Reusable solutions to common problems in software design.
 				<!-- .slide: class="center" -->
 
 				- **Classes should be open for extension but closed for modification.**
-				- Once you’ve written a class, it’s done. Never add anything to it after that.
-				- No modification: No new member variables, no new method, no new interfaces implemented.
-				- New applications via extension: But! Other code should be able to use your class in new ways.
+				- Once you've written a class, it's done. Never add anything to it after that.
+				- In doing so, we stop ourselves from modifying existing code and causing potential new bugs in an
+				otherwise happy application.
 
 				- Following are three mechanisms via which a class can be open for extensions:
 				- **Inheritance, delegation and composition.**
@@ -264,6 +173,8 @@ Reusable solutions to common problems in software design.
 				- This principle is just an extension of the Open Close Principle in terms of behaviour meaning that we
 				must make sure that new derived classes are extending the base classes without changing their behaviour.
 				- The new derived classes should be able to replace the base classes without any change in the code.
+				- Simply put, if class A is a subtype of class B, we should be able to replace B with A without
+				disrupting the behavior of our program.
 
 				---
 				# Design Principle 4: Interface Segregation Principle
@@ -278,177 +189,578 @@ Reusable solutions to common problems in software design.
 				have to implement it. What if the worker is a robot?
 
 				---
-				# Design Principle 5: Dependency Inversion and the Hollywood Principle
+				# Design Principle 5: Dependency Inversion
 
 				<!-- .slide: class="center" -->
-				- **Depend on abstractions, never on details. - The Dependency Inversion Principle**
+				- **The Dependency Inversion Principle states that a high-level class must not dependent upon a
+				lower-level class.**
 
-				- Lets’ say you are designing a word processor. Say you have classes for document and page.
+				![](./images/DI_1.png)
 
-				- To follow the Dependency inversion principle, you’d do two things.
+				<!-- .slide: class="ninety image-right image-fifty" -->
 
-				- Document and Page would both be interfaces implemented by some concrete classes.
-
-				- No implementation of either Document or Page interfaces should reference any other implementation.
-
-				---
-				# Design Principle 5: Dependency Inversion and the Hollywood Principle
-
-				<!-- .slide: class="center" -->
-				- **Where’s the inversion?**
-
-				- It’s because the high-level component and the low-level component now both depend on the abstractions.
-
-				- Document = Interface, Page = Interface
-
-				- DocumentImpl = implementation, PageImpl = implementation
-
-				- Document and DocumentImpl should both depend on Page – never on PageImpl
-				- Page and PageImpl should both depend on Document – never on DocumentImpl
-
-				- If we draw the UML diagram for this class hierarchy we will end with arrows pointed in inverted
-				direction which will end up in this principle Dependency Inversion.
-
-				---
-				# Design Principle 5: Dependency Inversion and the Hollywood Principle
-
-				<!-- .slide: class="center" -->
-
-				- **Don’t Call us, we’ll call you – The Hollywood Principle**
-
-				- High level modules will call the Low level modules.
-
-				- Let’s say you are designing a word processor. Say you have interfaces for Document and Page.
-				- The Page wants to know when the Document is changed in some way.
-				- In order to get this information the Page should not called the document.
-
-				- Instead the Document notifies the Page of changes when they occur – via events or messages.
-
-				- The idea of high-level components calling low-level components is ubiquitous in frameworks.
-
-				---
-				# Design Principle 5: Dependency Inversion and the Hollywood Principle
-
-				<!-- .slide: class="center" -->
-
-				- **Don’t Call us, we’ll call you – The Hollywood Principle**
-
-				- High level modules will call the Low level modules.
-
-				- Let’s say you are designing a word processor. Say you have interfaces for Document and Page.
-				- The Page wants to know when the Document is changed in some way.
-				- In order to get this information the Page should not called the document.
-
-				- Instead the Document notifies the Page of changes when they occur – via events or messages.
-
-				- The idea of high-level components calling low-level components is ubiquitous in frameworks.
+				![](./images/DI_2.png)
 
 				---
 				<!-- .slide: class="center" -->
-				# Strategy Pattern
+				# Strategy Design Pattern in Java
 
-				Inheritance and Interfaces
-
-				---
-				# Inheritance
-
-				- Inheritance is a core principle of OO Programming.
-				- But we tend to overuse it.
-				- Often results in design and code that is inflexible.
-				- Let’s look at example of “Duck simulator”.
+				- Title: Interchangeable Algorithms: The Strategy Pattern
+				- Subtitle: A Behavioral Pattern for Flexible Code
 
 				---
-				# Duplicate Code
+				# Strategy Pattern Introduction
 
-				<!-- .slide: class="center" -->
-
-				- All Subclasses need to override super class methods to avoid default behaviour.
-
-				![](./images/03-StrategyDesignPattern/DuplicateCode.png)
-
-
-				---
-				# Problems with our Design
-
-				- We have code duplicated across classes.
-				- Hard to gain knowledge of all the ducks.
-				- Changes can affect other ducks.
-				- Runtime behavior changes are difficult.
+				- What is it?
+				- A design pattern that defines a family of algorithms, encapsulates each one, and makes them
+				interchangeable.
+				- Allows algorithms to vary independently from clients that use them.
+				- Purpose:
+				- Decouples algorithms from clients
+				- Promotes flexibility and code reusability
+				- Enables easy algorithm switching at runtime
 
 				---
-				# What about using Interfaces ?
+				# Strategy Pattern Key Components
 
-				- Allow different classes to share similarities.
-				- Not all classes need to have same behavior.
-				- Let us try moving duck behaviors into interfaces.
-
-				---
-				# Interfaces implementation
-
-				- Still the duplicate code is not resolved.
-
-				![](./images/03-StrategyDesignPattern/InterfaceSolution.png)
+				- Strategy:
+				- An interface or abstract class defining the algorithm operations
+				- ConcreteStrategy:
+				- Implements the Strategy interface, providing a specific algorithm implementation
+				- Context:
+				- Uses a Strategy object to perform an algorithm
+				- Can switch between different Strategy objects at runtime
 
 				---
-				# Interface implementation is also Problematic
+				# Strategy Pattern UML Diagram
 
-				- Solves part of the Problem, but…
-				- Absolutely destroys code reuse
-				- Becomes a maintenance nightmare
-				- Does not allow for runtime changes in behavior other than flying and quacking.
-				- Like, a rubber duck has to implement quackable to squeak. Which is a bit odd.
-
+				![](./images/03-StrategyDesignPattern/DragonStrategyPattern.png)
 
 				---
-				# Design Principle 1 - Encapsulating the code that Varies
+				# Strategy Pattern Implementation
 
-				<!-- .slide: class="center" -->
-
-				- Identify the aspects of your code that vary and separate them from what stays the same.
-
-				- All patterns let some part of the code vary independently of the other parts.
-
-				- Fewer surprises from code changes and increased flexibility in your code.
-				---
-				# Programming to an Interface
-
-				<!-- .slide: class="center" -->
-
-				![](./images/03-StrategyDesignPattern/Identifying_What_Changes.png)
+				- Define a Strategy interface or abstract class
+				- Create ConcreteStrategy classes implementing the algorithm
+				- Context class holds a reference to a Strategy object
+				- Client code sets the Strategy object in the Context
 
 				---
-				# Programming to an Interface
+				# Strategy Pattern Example
 
-				<!-- .slide: class="center" -->
-
-				![](./images/03-StrategyDesignPattern/Identifying_What_Changes2.png)
+				https://github.com/raghava219/java-design-patterns/tree/master/strategy
 
 				---
-				# Programming to an Interface
+				# Strategy Pattern Benefits
 
-				<!-- .slide: class="center" -->
-				![](./images/03-StrategyDesignPattern/Programing_To_Interface.png)
-
-				---
-				## Programming to an Interface
-
-				<!-- .slide: class="one20" -->
-				![](./images/03-StrategyDesignPattern/Programing_To_Interface2.png)
+				- Decoupling of algorithms from clients: Promotes loose coupling and better code organization
+				- Runtime algorithm selection: Allows switching strategies without code changes
+				- Flexibility and reusability: Strategies can be reused in different contexts
+				- Open-closed principle: Extend functionality without modifying existing code
 
 				---
-				# Programming to an Interface
+				# Strategy Pattern Use Cases
 
-				- Rather than relying on an implementation of behavior in our ducks
-				- We are relying on an interface FlyBehaviour and QuackBehaviour are now interfaces
-				- A class that implements a specific behavior
-				- This way we are no longer locked into specific implementation.
-				- And ducks do not need to know details of how they implement the behaviors.
+				- Sorting algorithms: Choose different sorting algorithms based on data size or type
+				- Compression algorithms: Select compression methods based on file type or desired compression level
+				- Payment gateways: Switch between payment providers based on user preference or availability
+				- Game AI behaviors: Change enemy behavior patterns based on difficulty level or game state
+
+				---
+				# Strategy Pattern Considerations
+
+				- Increased complexity: Introduces additional classes and interfaces
+				- Runtime overhead: Switching strategies might incur performance costs
+				- Design for extensibility: Plan for potential strategy additions from the start
+
+				---
+				# Strategy Pattern Conclusion
+
+				- The Strategy pattern is a powerful tool for decoupling algorithms from clients.
+				- **Consider using it when you need to:
+				Change algorithms at runtime
+				Support multiple algorithms for a task
+				Improve code flexibility and reusability**
 
 				---
 				<!-- .slide: class="center" -->
 				# Observer Pattern
 
-				- Observer
+				- **Title:** Observer Pattern: Keeping Objects in Sync
+				- **Subtitle:** A Behavioral Design Pattern for Effective Communication
+
+				---
+				<!-- .slide: class="center" -->
+				# Observer Pattern Introduction
+
+				- **What is it?**
+				- A design pattern that defines a one-to-many dependency between objects
+				- When one object (the subject) changes state, all its dependents (observers) are notified and updated
+				automatically
+				- **Purpose:**
+				- Decouples objects that need to be notified of changes from the object that is changing
+				- Promotes loose coupling and flexibility
+
+				---
+				<!-- .slide: class="center" -->
+				# Observer Pattern Key Components
+
+				- **Subject (Observable):**
+				- The object being observed
+				- Maintains a list of observers
+				- Notifies observers when its state changes
+				- **Observer (Listener):**
+				- An object that wants to be notified of changes in the subject
+				- Registers with the subject to receive notifications
+				- Implements an update() method to receive and handle notifications
+
+				---
+				<!-- .slide: class="center" -->
+				# Observer Pattern UML Diagram
+				![](./images/04-ObserverDesignPattern/ObserverPattern.png)
+
+				---
+				<!-- .slide: class="center" -->
+				# Observer Pattern implementation
+
+				- Below Java code example demonstrating the Observer pattern with a Weather Station as the Subject and
+				various Display elements as Observers:
+
+				- https://github.com/raghava219/java-design-patterns/tree/master/observer
+
+				---
+				<!-- .slide: class="center" -->
+				# Benefits of Observer Pattern
+
+				- Loose coupling: Subjects and observers are independent
+				- Supports open-closed principle: Add new observers without modifying subject
+				- Encourages event-driven programming: Observers react to events
+
+				---
+				<!-- .slide: class="center" -->
+				# Use Cases of Observer Pattern
+
+				- GUI event handling: Buttons, text fields, etc.
+				- Model-View-Controller (MVC) pattern: Views observe model changes
+				- Distributed systems: Nodes communicate changes
+				- Messaging systems: Subscribers receive messages
+
+				---
+				<!-- .slide: class="center" -->
+				# Considerations of Observer Pattern
+
+				- Potential for infinite loops: Avoid circular dependencies
+				- Memory leaks: Unregister observers when no longer needed
+				- Synchronization: Handle concurrent updates carefully
+
+				---
+				<!-- .slide: class="center" -->
+				# Conclusion of Observer Pattern
+
+				- The Observer pattern is a powerful tool for managing communication between objects.
+				- It promotes loose coupling, flexibility, and event-driven programming.
+				- Consider using it when you need to notify multiple objects about changes in a single object.
+
+				---
+				<!-- .slide: class="center" -->
+				# Decorator Pattern
+
+				- **Title:** Dynamically Extending Functionality with Decorators
+				- **Subtitle:** A Structural Design Pattern for Flexible Enhancement
+
+				---
+				# Decorator Pattern Introduction
+
+				- What is it?
+				- A design pattern that allows adding new behaviors to existing objects dynamically
+				- Wraps the original object with a decorator, enhancing its functionality
+				- Purpose:
+				- Promotes flexibility and code reusability
+				- Avoids subclassing for simple additions
+				- Allows for multiple decorations in different combinations
+
+				---
+				# Decorator Pattern Key Components
+
+				- Component:
+				- The interface defining the operations that can be decorated
+				- Concrete Component:
+				- The original object that will be decorated
+				- Decorator:
+				- Implements the Component interface
+				- Wraps a Component object
+				- Adds new functionality before or after delegating to the wrapped object
+
+				---
+				# Decorator Pattern UML Diagram
+
+				![](./images/05-Decorator/decorator.png)
+
+				---
+				# Decorator Pattern Implementation in Java
+
+				- No built-in support:
+				- Create custom Component interface
+				- ConcreteComponent classes implement Component
+				- Decorator classes extend Component and have a Component member to wrap
+
+				---
+				# Decorator Pattern Example:
+
+				https://github.com/raghava219/java-design-patterns/tree/master/decorator
+				https://www.digitalocean.com/community/tutorials/decorator-design-pattern-in-java-example
+
+
+				---
+				# Decorator Benefits
+
+				- Dynamic behavior addition: Add functionality without modifying existing code
+				- Flexible combinations: Stack multiple decorators for complex additions
+				- Open-closed principle: Extend functionality without changing original classes
+				- Adheres to single responsibility principle: Decorators focus on single additions
+
+				---
+				# Decorator Use Cases
+
+				- Adding features to objects: File compressors, encryption, logging
+				- Implementing conditions or constraints: Permission checks, validation
+				- Customizing visual components: Borders, shadows, animations
+				- Implementing chaining: Filters in image processing or data pipelines
+
+				---
+				# Decorator Considerations
+
+				- Potential for complexity: Too many decorators can make code harder to understand
+				- Performance overhead: Delegation might impact performance in tight loops
+				- Design for extensibility: Plan for potential decorations from the start
+
+				---
+				# Decorator Conclusion
+
+				- The Decorator pattern is a valuable tool for adding functionality dynamically.
+				- It promotes flexibility, code reusability, and adherence to design principles.
+				- Use it when you need to enhance objects without modifying their core code.
+
+
+				---
+				<!-- .slide: class="center" -->
+				# Singleton Pattern in Java
+
+				- Title: Ensuring Uniqueness: The Singleton Pattern
+				- Subtitle: A Creational Design Pattern for Controlled Instantiation
+
+				---
+				# Singleton Introduction
+
+				- What is it?
+				- A design pattern that ensures a class has only one instance and provides a global access point to it.
+				- Purpose:
+				- Control access to shared resources
+				- Coordinate actions across the system
+				- Enforce strict single instance requirements
+
+				---
+				# Singleton Key Components
+
+				- Singleton Class:
+				- Private constructor to prevent external instantiation
+				- Static method (getInstance()) to provide controlled access to the single instance
+				- Private static field to hold the single instance
+
+				---
+				# Singleton UML Diagram
+
+				![](./images/06-Singleton/singleton.png)
+
+				---
+				# Singleton Implementation
+
+				- Common approaches:
+				- Eager initialization
+				- Lazy initialization
+				- Thread-safe initialization
+				- Bill Pugh's solution (inner static helper class)
+
+
+				https://www.digitalocean.com/community/tutorials/java-singleton-design-pattern-best-practices-examples
+				https://github.com/raghava219/java-design-patterns/tree/master/singleton
+
+				---
+				# Singleton Benefits
+
+				- Controlled access: Manages access to a single instance
+				- Global access point: Provides a consistent way to access the instance
+				- Resource management: Enforces single instances for resources like database connections
+				- Global state: Manages global state across the application
+
+				---
+				# Singleton Use Cases
+
+				- Configuration manager: Holds application-wide settings
+				- Database connection pool: Manages database connections
+				- Thread pool: Manages reusable threads
+				- Logging system: Provides a single point for logging
+
+				---
+				# Singleton Considerations
+
+				- Tight coupling: Can lead to dependencies and testing challenges
+				- Global state: Can complicate testing and maintenance
+				- Overuse: Use only when truly necessary
+				- Thread safety: Ensure thread-safe implementation in multi-threaded environments
+
+				---
+				# Singleton Conclusion
+
+				- The Singleton pattern is useful for controlling access to a single instance.
+				- Use it judiciously, considering its potential drawbacks.
+				- Choose the appropriate implementation based on thread safety requirements.
+
+				---
+				<!-- .slide: class="center" -->
+				# State Pattern
+
+				- Title: Mastering Object Behavior with State
+				- Subtitle: A Behavioral Pattern for Dynamic State Handling
+
+				---
+				# State Pattern Introduction
+
+				- What it is:
+				- Encapsulates state-specific behavior within separate state classes
+				- Allows an object to change its behavior based on its internal state
+				- Purpose:
+				- Decouples state-specific behavior from the context object
+				- Simplifies state transitions and logic
+				- Promotes code flexibility and maintainability
+
+				---
+				# State Pattern Key Components
+
+				- Context:
+				- The object whose behavior varies based on its state
+				- Holds a reference to the current state object
+				- State:
+				- An interface or abstract class defining the common operations for all states
+				- ConcreteStates:
+				- Implement the State interface, defining state-specific behavior
+
+				---
+				# State Pattern UML Diagram
+
+				![](./images/07-StatePatern/state_urm.png)
+
+				---
+				# State Pattern Implementation
+
+				- Define a State interface or abstract class
+				- Create ConcreteState classes implementing the state-specific behavior
+				- Context class holds a reference to the current State object
+				- Context delegates state-specific behavior to the State object
+
+				---
+				# State Pattern Example:
+
+				https://github.com/raghava219/java-design-patterns/tree/master/state
+
+				---
+				# State Pattern Benefits
+
+				- Encapsulation of state-specific behavior: Improves code organization and readability
+				- Decoupling of state and context: Reduces code complexity and dependency
+				- Easy state transitions: Handled within state objects, simplifying logic
+				- Flexibility and extensibility: Easy to add new states without modifying context
+
+				---
+				# State Pattern Use Cases
+
+				- Finite state machines: Implementing state-driven behavior (e.g., traffic lights, game characters)
+				- Order processing systems: Tracking order status (e.g., pending, shipped, delivered)
+				- Network connections: Handling connection states (e.g., open, closed, error)
+				- GUI widgets: Managing different visual states (e.g., enabled, disabled, focused)
+
+				---
+				# State Pattern Considerations
+
+				- Increased number of classes: Can add complexity if many states are involved
+				- Runtime overhead: State transitions might incur performance costs
+				- Design for extensibility: Plan for potential state additions from the start
+
+				---
+				# State Pattern Conclusion
+
+				- State pattern is a valuable tool for managing object behavior based on state.
+				- **Use it when:
+				Object's behavior varies significantly based on its state
+				State transitions are complex or frequent
+				You need to isolate state-specific logic for better maintainability**
+
+				---
+				<!-- .slide: class="center" -->
+				# **Collection Design Pattern**
+
+				**Title:** Harnessing the Power of Collections
+				**Subtitle:** A Structural Pattern for Managing Groups of Objects
+
+				---
+				# **Collection DP Introduction**
+
+				* **What it is:**
+				- Not a formally defined design pattern in the classic GoF sense
+				- A collection-centric approach to object organization and management
+				- Leverages Java's Collection Framework for efficient data handling
+
+				---
+				# **Collection DP Key Components**
+
+				* **Collections Framework:**
+				- Interfaces (e.g., List, Set, Map) defining core collection behaviors
+				- Concrete implementations (e.g., ArrayList, HashSet, HashMap) providing specific storage and access
+				mechanisms
+				* **Iterators:**
+				- Objects that traverse collections, allowing element access and removal
+
+				---
+				# **Collection DP UML Diagram**
+
+				![](./images/08-Collection_Itterator/iterator_1.png)
+
+				---
+				# **Collection DP Implementation**
+
+				* **Choose appropriate Collection interface based on needs:**
+				- List for ordered collections
+				- Set for unique elements
+				- Map for key-value pairs
+				* **Use concrete implementations for specific performance and functionality:**
+				- ArrayList for dynamic arrays
+				- LinkedList for frequent insertions/deletions
+				- HashSet for fast set operations
+				- HashMap for efficient key-value lookups
+				* **Utilize iterators for safe and flexible element processing:**
+				- `for (Object o : collection)` loop for simplified iteration
+
+				---
+				# **Collection Design Pattern Example**
+
+				https://github.com/raghava219/java-design-patterns/tree/master/iterator
+
+				---
+				# **Collection DP Benefits**
+
+				* **Encapsulation and abstraction:** Collections hide implementation details, promoting code flexibility
+				* **Polymorphism:** Code can work with different collection types without modification
+				* **Rich functionality:** Collections offer various methods for searching, sorting, filtering, and
+				manipulation
+				* **Efficiency:** Optimized implementations for different use cases
+
+				---
+				# **Collection DP Use Cases**
+
+				* **Storing and managing groups of objects:** User lists, product catalogs, transaction records
+				* **Implementing data structures:** Stacks, queues, trees, graphs
+				* **Processing data in various ways:** Sorting, filtering, aggregating, transforming
+				* **Representing relationships between objects:** Maps for associating keys with values
+
+				---
+				# **Collection DP Considerations**
+
+				* **Choose the right collection type:** Consider performance characteristics and required operations
+				* **Understand iterator behavior:** Use iterators correctly to avoid concurrent modification issues
+				* **Avoid premature optimization:** Start with simple collections and optimize as needed
+
+				---
+				# **Collection DP Conclusion**
+
+				* **Collection design pattern (approach) is essential for effective object management in Java.**
+				* **Master the Collection Framework to write clean, efficient, and maintainable code.**
+				* **Choose collections wisely based on requirements and performance needs.**
+
+				---
+				<!-- .slide: class="center" -->
+				# ** Factory Design Pattern**
+
+				- **Title:** Creating Objects with Flexibility: The Factory Pattern
+				- **Subtitle:** A Creational Pattern for Encapsulated Object Instantiation
+
+				---
+				# **Factory DP Introduction**
+
+				* **What it is:**
+				- A design pattern that defines an interface for creating objects, but lets subclasses decide which
+				class to instantiate.
+				- Separates object creation from its usage, promoting loose coupling and flexibility.
+				* **Purpose:**
+				- Decouples client code from concrete classes
+				- Centralizes object creation logic
+				- Facilitates easy object switching
+				- Achieves dependency inversion
+
+				---
+				# **Factory DP Key Components**
+
+				* **Product:**
+				- An interface or abstract class defining the common operations of products to be created
+				* **ConcreteProduct:**
+				- Implements the Product interface, representing different product variants
+				* **Factory:**
+				- An interface or abstract class defining a method for creating products
+				* **ConcreteFactory:**
+				- Implements the Factory interface, specifying the creation of specific ConcreteProduct instances
+
+				---
+				# **Factory DP UML Diagram**
+
+				![](./images/09-FactoryDP/factory.urm.png)
+
+				---
+				# **Factory DP Implementation**
+
+				* **Define a Product interface or abstract class**
+				* **Create ConcreteProduct classes implementing the Product interface**
+				* **Define a Factory interface or abstract class with a createProduct() method**
+				* **Create ConcreteFactory classes implementing the createProduct() method to return specific
+				ConcreteProduct instances**
+				* **Client code uses the Factory interface to create products without knowing the concrete classes**
+
+				---
+				# **Factory DP Example**
+
+				https://github.com/raghava219/java-design-patterns/tree/master/factory
+
+				---
+				# **Factory DP Benefits**
+
+				* **Decoupling of client code and concrete classes:** Reduces dependencies and promotes code flexibility
+				* **Centralized object creation logic:** Simplifies object management and testing
+				* **Easy object switching:** Can change concrete classes without modifying client code
+				* **Supports open-closed principle:** Extend the product family without affecting clients
+				* **Encapsulates object creation complexity:** Hides intricate creation details
+
+				---
+				# **Factory DP Use Cases**
+
+				* **Creating objects without exposing creation logic:** Logging, configuration, database access
+				* **Providing multiple ways to create objects:** Different factories for different product types
+				* **Deferring instantiation to subclasses:** Delaying object creation decisions
+				* **Implementing the dependency inversion principle:** Relying on abstractions, not concrete classes
+
+				---
+				# **Factory DP Considerations**
+
+				* **Increased number of classes:** Can add complexity for simple cases
+				* **Potential redundancy:** Multiple factories might create similar objects
+				* **Design for extensibility:** Plan for potential product additions from the start
+
+				---
+				# **Factory DP Conclusion**
+
+				* **Factory pattern is a powerful tool for decoupling object creation from usage.**
+				* Consider using it when:
+				- You need to create objects without exposing creation logic
+				- You want to centralize object creation
+				- You anticipate future changes in object types
+
+
 
 				</script>
 			</section>

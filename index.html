@@ -760,6 +760,90 @@ Reusable solutions to common problems in software design.
 				- You want to centralize object creation
 				- You anticipate future changes in object types
 
+				---
+				<!-- .slide: class="center" -->
+				# **Facade Design Pattern**
+
+				- **Title:** Simplifying Complex Systems: The Facade Pattern
+				- **Subtitle:** A Structural Pattern for User-Friendly Interfaces
+
+				---
+				# **Facade Introduction**
+
+				* **What it is:**
+				- A design pattern that provides a simplified interface to a complex subsystem.
+				- Acts as a unified front, making it easier to use the subsystem.
+				* **Purpose:**
+				- Reduces complexity for clients
+				- Decouples clients from subsystem components
+				- Promotes loose coupling
+				- Makes code more readable and maintainable
+
+				---
+				# **Facade Key Components**
+
+				* **Facade:**
+				- A class that provides a simple interface to the complex subsystem.
+				- Forwards client calls to appropriate subsystem components.
+				* **Subsystem:**
+				- A collection of classes and interfaces that provide specific functionality.
+				- The Facade hides the subsystem's internal structure and complexities.
+
+				---
+				# **Facade UML Diagram**
+
+				![](./images/10-Facade/facade.urm.png)
+
+				---
+				# **Facade Implementation**
+
+				* **Create a Facade class that encapsulates the subsystem's functionality.**
+				* **Provide easy-to-use methods in the Facade that hide the subsystem's complexities.**
+				* **The Facade internally calls the necessary subsystem classes to perform actions.**
+				* **Clients interact only with the Facade, unaware of the underlying subsystem.**
+
+				---
+				# **Facade Example: Home Theater System**
+
+				https://github.com/raghava219/java-design-patterns/tree/master/facade
+
+				---
+				# **Facade Benefits**
+
+				* **Simplifies client code:** Clients interact with a simple interface, not a complex subsystem.
+				* **Decouples clients from subsystem:** Changes to the subsystem's internal structure won't affect
+				clients.
+				* **Promotes loose coupling:** Clients are less dependent on specific subsystem classes.
+				* **Enhances code readability and maintainability:** Clearer separation of concerns.
+
+				---
+				# **Facade Use Cases**
+
+				* **Providing a simplified API for a complex library or framework:** JDBC, logging frameworks
+				* **Creating a user-friendly interface for a system with many components:** Home theater systems,
+				e-commerce platforms
+				* **Isolating clients from complex subsystems or legacy code:** Wrapping legacy code with a modern
+				facade
+				* **Implementing a layer between different architectural tiers:** Separating presentation and business
+				logic layers
+
+				---
+				# **Facade Considerations**
+
+				* **Potential for overuse:** Avoid using Facades to hide poorly designed subsystems.
+				* **Might introduce a single point of failure:** Ensure the Facade is well-tested and reliable.
+				* **Consider the trade-offs between simplicity and flexibility:** Facades can limit access to advanced
+				subsystem features.
+
+				---
+				# **Facade Conclusion**
+
+				* **Facade pattern is a valuable tool for simplifying complex systems and promoting loose coupling.**
+				* **Use it when:
+				- You need to provide a simpler interface to a complex subsystem
+				- You want to decouple clients from subsystem components
+				- You aim to improve code readability and maintainability**
+
 
 
 				</script>
